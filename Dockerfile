@@ -6,4 +6,6 @@ COPY requirements.txt .
 COPY dataflowops/ /opt/prefect/dataflowops/
 COPY flows/ /opt/prefect/flows/
 RUN pip install .
+RUN pip install prefect_aws
+RUN pip install pyopenssl --upgrade
 RUN prefect block register -m prefect_aws.ecs
